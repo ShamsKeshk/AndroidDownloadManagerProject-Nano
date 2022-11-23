@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4CAF50</color>
+    <color name="colorPrimaryDark">#388E3C</color>
+    <color name="colorAccent">#FF5252</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="btn_default_text_color">@color/white</color>
+    <color name="btn_default_background">@color/colorAccent</color>
+    <color name="btn_download_progress_background">#880808</color>
+    <color name="btn_download_progress_wheel_color">@color/colorPrimaryDark</color>
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LoadingButton">
+
+<!--        <attr name="buttonBackgroundColor" format="color"/>-->
+<!--        <attr name="animationProgressBackgroundColor" format="color"/>-->
+<!--        <attr name="animationProgressWheelColor" format="color"/>-->
+
+    </declare-styleable>
+
+    <declare-styleable name="CustomView">
+
+        <attr name="buttonTextColor" format="color"/>
+        <attr name="buttonBackgroundColor" format="color"/>
+        <attr name="animationProgressBackgroundColor" format="color"/>
+        <attr name="animationProgressWheelColor" format="color"/>
+        <attr name="android:textSize" format="dimension" />
+    </declare-styleable>
+</resources>
