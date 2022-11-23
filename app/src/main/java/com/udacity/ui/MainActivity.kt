@@ -10,6 +10,7 @@ import androidx.databinding.DataBindingUtil
 import com.udacity.R
 import com.udacity.customDownloaderViews.model.ButtonState
 import com.udacity.databinding.ActivityMainBinding
+import com.udacity.framework.notification.NotificationUtils
 import com.udacity.framework.services.DownloadStatusFactory
 import com.udacity.framework.services.UdacityDownloadManager
 
@@ -27,6 +28,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         setSupportActionBar(binding.toolbar)
+
+        NotificationUtils.createChannel(this,getString(R.string.notification_download_channel_id),getString(R.string.notification_download_channel_name))
+
         udacityDownloadManager = UdacityDownloadManager(application)
         this.lifecycle.addObserver(udacityDownloadManager)
 

@@ -37,6 +37,7 @@ class UdacityDownloadManager(val app: Application): DefaultLifecycleObserver {
         val request = createDownloadRequest(url)
         val downloadId = startEnqueueDownloadRequest(request)
         udacityDownloadReceiver.downloadId = downloadId
+        udacityDownloadReceiver.downloadUrl = url
         return downloadId
     }
 

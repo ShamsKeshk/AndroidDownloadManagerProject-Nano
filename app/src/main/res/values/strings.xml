@@ -15,4 +15,13 @@
     <string name="btn_download_initial_state">Download now just click here</string>
     <string name="btn_download_clicked_state">Download now just click here</string>
     <string name="btn_download_downloading_state">Downloading …</string>
+
+    <string name="notification_download_details_action">Check Now</string>
+    <string name="notification_download_channel_id">Download_Resources_Channel</string>
+    <string name="notification_download_channel_name">Udacity Download Channel</string>
+    <string name="notification_download_channel_description">Download Channel related to Notification of Download Status</string>
+
+    <string name="notification_download_success_message">File Downloaded Successfully! don\'t wait check it now</string>
+
+    <string name="download_status_succeeded">Succeeded</string>
 </resources>
