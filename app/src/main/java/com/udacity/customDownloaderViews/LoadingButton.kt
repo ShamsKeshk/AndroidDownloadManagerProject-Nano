@@ -36,11 +36,11 @@ class LoadingButton @JvmOverloads constructor(
     //============================================//
 
     init {
-        context.withStyledAttributes(attributeSet, R.styleable.CustomView) {
-            buttonTextColor = getColor(R.styleable.CustomView_buttonTextColor, 0)
-            buttonBackgroundColor = getColor(R.styleable.CustomView_buttonBackgroundColor, 0)
-            animationProgressBackgroundColor = getColor(R.styleable.CustomView_animationProgressBackgroundColor,0)
-            animationProgressWheelColor = getColor(R.styleable.CustomView_animationProgressWheelColor, 0)
+        context.withStyledAttributes(attributeSet, R.styleable.LoadingButton) {
+            buttonTextColor = getColor(R.styleable.LoadingButton_buttonTextColor, 0)
+            buttonBackgroundColor = getColor(R.styleable.LoadingButton_buttonBackgroundColor, 0)
+            animationProgressBackgroundColor = getColor(R.styleable.LoadingButton_animationProgressBackgroundColor,0)
+            animationProgressWheelColor = getColor(R.styleable.LoadingButton_animationProgressWheelColor, 0)
             tvSize = getDimension(R.styleable.TextAppearance_android_textSize, 0f)
         }
     }
