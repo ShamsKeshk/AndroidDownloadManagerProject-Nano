@@ -1,11 +1,10 @@
 package com.udacity.ui
 
-import android.app.NotificationManager
-import android.app.PendingIntent
+
 import android.os.Bundle
 import android.widget.RadioButton
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.NotificationCompat
 import androidx.databinding.DataBindingUtil
 import com.udacity.R
 import com.udacity.customDownloaderViews.model.ButtonState
@@ -15,10 +14,6 @@ import com.udacity.framework.services.DownloadStatusFactory
 import com.udacity.framework.services.UdacityDownloadManager
 
 class MainActivity : AppCompatActivity() {
-
-    private lateinit var notificationManager: NotificationManager
-    private lateinit var pendingIntent: PendingIntent
-    private lateinit var action: NotificationCompat.Action
 
     private lateinit var binding: ActivityMainBinding
 
@@ -35,9 +30,14 @@ class MainActivity : AppCompatActivity() {
         this.lifecycle.addObserver(udacityDownloadManager)
 
         binding.contentMain.btnDownload.setOnClickListener {
+            val selectedUrl = getSelectedUrl()
+            if (selectedUrl.isNullOrEmpty()){
+                Toast.makeText(applicationContext,getString(R.string.donwload_no_repo_selected_message),Toast.LENGTH_LONG).show()
+                return@setOnClickListener
+            }
             binding.contentMain.btnDownload.downloaderButtonState = ButtonState.Clicked
             binding.contentMain.btnDownload.downloaderButtonState = ButtonState.Loading
-            download(getSelectedUrl())
+            download(selectedUrl)
         }
 
         initDownloadObserver()
@@ -52,9 +52,12 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun getSelectedUrl(): String{
+    private fun getSelectedUrl(): String?{
         return  binding.contentMain.rgGroupOfUrls.checkedRadioButtonId.let {
-             binding.root.findViewById<RadioButton>(it).text.toString()
+            if (it == -1)
+                return null
+
+             binding.root.findViewById<RadioButton>(it)?.text.toString()
         }
     }
 
